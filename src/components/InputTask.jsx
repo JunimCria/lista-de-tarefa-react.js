@@ -2,7 +2,7 @@ import React, { useState } from "react";
 import "./InputTask.css";
 import Button from "./Button";
 
-const InputTask = ({handleAddTask}) => {
+const InputTask = ({ handleAddTask }) => {
   const [inputTask, setInputTask] = useState("");
 
   const handleInputTaskChange = (e) => {
@@ -10,9 +10,11 @@ const InputTask = ({handleAddTask}) => {
   };
 
   const handleTaskAddClick = () => {
-    handleAddTask(inputTask);
-    setInputTask('');
-  } 
+    if (inputTask !== "") {
+      handleAddTask(inputTask);
+    }
+    setInputTask("");
+  };
 
   return (
     <>
