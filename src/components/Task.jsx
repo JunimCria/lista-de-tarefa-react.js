@@ -1,9 +1,16 @@
 import React from "react";
-import { IoClose } from "react-icons/io5";
+import { IoClose, IoAlertCircleOutline } from "react-icons/io5";
+import { useNavigate } from "react-router-dom";
 
 import "./Task.css";
 
 const Task = ({ task, handleTaskCompleteClick, handleTaskRemoveClick }) => {
+  const navigate = useNavigate();
+
+  const handleChangePageInfoClick = (taskTitle) => {
+    navigate(`/${taskTitle}`);
+  };
+
   return (
     <div
       style={task.complete ? { borderLeft: "6px solid chartreuse" } : {}}
@@ -17,6 +24,12 @@ const Task = ({ task, handleTaskCompleteClick, handleTaskRemoveClick }) => {
       </div>
 
       <div className="task-options-container">
+        <button
+          onClick={() => handleChangePageInfoClick(task.title)}
+          className="task-info-button"
+        >
+          <IoAlertCircleOutline />
+        </button>
         <button
           onClick={() => handleTaskRemoveClick(task.id)}
           className="task-remove-button"

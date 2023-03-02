@@ -1,0 +1,17 @@
+.back-button-container {
+  width: 150px;
+  margin: 0;
+}
+.info-container {
+  margin: 15px auto;
+  border-radius: 5px;
+  padding: 5px 10px;
+  background-color: #444;
+}
+.info-container h2 {
+  color: chartreuse;
+  margin-bottom: 10px;
+}
+.info-container p {
+  color: white;
+}

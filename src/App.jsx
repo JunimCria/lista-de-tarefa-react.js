@@ -4,18 +4,27 @@ import Header from "./components/Header";
 import HomePage from "./components/Pages/Home-Page";
 
 import "./App.css";
+import InfoPage from "./components/Pages/Info-Page";
 
 const App = () => {
   return (
     <Router>
       <div className="container">
+        <Header />
         <Routes>
           <Route
             path="/"
             element={
               <>
-                <Header />
                 <HomePage />
+              </>
+            }
+          />
+          <Route
+            path="/:taskTitle"
+            element={
+              <>
+                <InfoPage />
               </>
             }
           />

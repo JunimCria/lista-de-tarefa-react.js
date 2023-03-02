@@ -25,7 +25,9 @@ const InputTask = ({ handleAddTask }) => {
           className="input-Task"
           type="text"
         />
-        <Button onClick={handleTaskAddClick}>Adicionar</Button>
+        <div className="add-task-button ">
+          <Button onClick={handleTaskAddClick}>Adicionar</Button>
+        </div>
       </div>
     </>
   );
